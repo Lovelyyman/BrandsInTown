@@ -33,7 +33,6 @@
                     <connections>
                         <outlet property="searchDisplayController" destination="LOp-ml-IsS" id="4bt-0z-C63"/>
                         <outlet property="spinner" destination="OVv-4G-NA1" id="4u3-G7-97h"/>
-                        <segue destination="d8P-zI-eby" kind="show" identifier="toEventTableViewController" id="KBI-f5-6v7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -137,25 +136,41 @@
                                     <outlet property="topConstraint" destination="lJn-23-bAI" id="ysa-Qi-qMT"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TextCell" id="L6G-ub-lD6">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="EventTableViewCell" id="L6G-ub-lD6" customClass="EventTableViewCell" customModule="BrandsInTown" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="322" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="L6G-ub-lD6" id="kBE-Ey-rDG">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Parallax scrolling without Pull to Refresh" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TiX-ac-lBK">
-                                            <rect key="frame" x="30" y="10" width="316" height="22"/>
-                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
-                                            <color key="textColor" red="0.33333333329999998" green="0.33333333329999998" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BYG-mN-McS">
+                                            <rect key="frame" x="8" y="11" width="42" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vhp-Qa-u5T">
+                                            <rect key="frame" x="166" y="11" width="42" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bl5-2W-G3b">
+                                            <rect key="frame" x="318" y="10" width="42" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
-                                    <constraints>
-                                        <constraint firstAttribute="centerY" secondItem="TiX-ac-lBK" secondAttribute="centerY" constant="0.25" id="BUL-RB-7pb"/>
-                                        <constraint firstAttribute="centerX" secondItem="TiX-ac-lBK" secondAttribute="centerX" constant="-0.5" id="ewy-UT-m09"/>
-                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="eventDate" destination="BYG-mN-McS" id="hbP-pg-jHY"/>
+                                    <outlet property="eventPlace" destination="bl5-2W-G3b" id="L7M-pJ-luG"/>
+                                    <outlet property="eventVenueName" destination="vhp-Qa-u5T" id="DuV-7i-qA8"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

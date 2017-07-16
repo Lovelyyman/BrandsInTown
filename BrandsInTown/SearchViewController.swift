@@ -61,7 +61,7 @@ extension SearchViewController: UISearchBarDelegate {
                 self.spinner.stopAnimating()
                 guard let artist = artist else { return }
                 let controller = Storyboard.main.instance.instantiateViewController(withIdentifier: "EventTableViewController") as! EventTableViewController
-                controller.artist = artist
+                controller.configure(withArtist: artist, dataProvider: self.dataProvider)
                 self.navigationController?.pushViewController(controller, animated: true)
             }
         }

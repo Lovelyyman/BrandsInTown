@@ -9,6 +9,7 @@ import Foundation
 import Alamofire
 import Alamofire_Gloss
 import Gloss
+
 class BrandsInTownFetcher {
     
     private struct URLs {
@@ -39,6 +40,12 @@ class BrandsInTownFetcher {
             case .failure(let error):
                 print(error)
             }
+        }
+    }
+    
+    func fetchImageData(forURL imageURL: URL, completion: @escaping (Data?) -> ()) {
+        Alamofire.request(imageURL).responseData { response in
+            completion(response.result.value)
         }
     }
 }
