@@ -21,9 +21,12 @@ class ArtistTableViewCell: UITableViewCell {
             topConstraint.constant = scrollView.contentOffset.y / 2
             bottomConstraint.constant = -scrollView.contentOffset.y / 2
         } else {
-            topConstraint.constant = scrollView.contentOffset.y
             containerView.clipsToBounds = false
+            topConstraint.constant = scrollView.contentOffset.y
         }
     }
     
+    func configure(withArtist artist: Artist) {
+        
+    }
 }
