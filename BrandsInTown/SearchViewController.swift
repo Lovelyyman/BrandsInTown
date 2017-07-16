@@ -14,6 +14,21 @@ extension String {
     }
 }
 
+enum Storyboard: String {
+    case main = "Main"
+    
+    var instance: UIStoryboard {
+        return UIStoryboard(name: rawValue, bundle: nil)
+    }
+    
+    func instanceOf<T: UIViewController>(viewController: T.Type, identifier viewControllerIdentifier: String? = nil) -> T? {
+        if let identifier = viewControllerIdentifier {
+            return instance.instantiateViewController(withIdentifier: identifier) as? T
+        }
+        return instance.instantiateInitialViewController() as? T
+    }
+}
+
 class SearchViewController: UIViewController {
 
     @IBOutlet var spinner: UIActivityIndicatorView!
@@ -44,9 +59,11 @@ extension SearchViewController: UISearchBarDelegate {
         dataProvider.getArtist(withName: text) { artist in
             DispatchQueue.main.async {
                 self.spinner.stopAnimating()
+                guard let artist = artist else { return }
+                let controller = Storyboard.main.instance.instantiateViewController(withIdentifier: "EventTableViewController") as! EventTableViewController
+                controller.artist = artist
+                self.navigationController?.pushViewController(controller, animated: true)
             }
-            guard let artist = artist else { return }
-            
         }
     }
 }

@@ -8,12 +8,16 @@
 
 import Foundation
 import UIKit
+import Alamofire
 
 class ArtistTableViewCell: UITableViewCell {
 
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var topConstraint: NSLayoutConstraint!
     @IBOutlet weak var containerView: UIView!
+    @IBOutlet var artistName: UILabel!
+    @IBOutlet var artistDates: UILabel!
+    @IBOutlet var artistImage: UIImageView!
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if scrollView.contentOffset.y >= 0 {
@@ -21,8 +25,20 @@ class ArtistTableViewCell: UITableViewCell {
             topConstraint.constant = scrollView.contentOffset.y / 2
             bottomConstraint.constant = -scrollView.contentOffset.y / 2
         } else {
-            topConstraint.constant = scrollView.contentOffset.y
             containerView.clipsToBounds = false
+            topConstraint.constant = scrollView.contentOffset.y
+        }
+    }
+    
+    func configure(withArtist artist: Artist) {
+        artistName.text = artist.name
+        if let upcomingEventCount = artist.upcomingEventCount {
+            artistDates.text = ("\(upcomingEventCount)")
+        }
+        guard let imageURL = artist.imageURL else { return }
+        Alamofire.request(URL(string: imageURL)!).responseData { response in
+            guard let data = response.result.value, let image = UIImage(data: data)  else { return }
+            DispatchQueue.main.async { self.artistImage.image = image }
         }
     }
     
