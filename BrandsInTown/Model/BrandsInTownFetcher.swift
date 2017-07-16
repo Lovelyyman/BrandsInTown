@@ -20,10 +20,10 @@ class BrandsInTownFetcher {
     
     func fetchArtist(withName name: String, completion: @escaping (Artist?) -> ()) {
         let specificArtistURL = URLs.artistsURL.appendingPathComponent(name)
-        Alamofire.request(specificArtistURL, parameters: query).responseJSON { response in
+        Alamofire.request(specificArtistURL, parameters: query).responseObject(Artist.self) { response in
             switch response.result {
             case .success(let value):
-                completion(Artist(json: value as! JSON))
+                completion(value)
             case .failure(let error):
                 print(error)
                 completion(nil)
