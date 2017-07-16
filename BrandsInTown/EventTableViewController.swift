@@ -11,6 +11,8 @@ import UIKit
 
 class EventTableViewController: UITableViewController {
     
+    var artist: Artist!
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 2
     }
@@ -22,6 +24,7 @@ class EventTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "ArtistTableViewCell", for: indexPath) as! ArtistTableViewCell
+            cell.configure(withArtist: artist)
             return cell
         } else {
             
@@ -34,11 +37,12 @@ class EventTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return indexPath.section == 0 ? 200 : 50
+        return indexPath.section == 0 ? 250 : 50
     }
     
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {
         guard let artistCell = tableView.cellForRow(at: IndexPath(item: 0, section: 0)) as? ArtistTableViewCell else { return }
         artistCell.scrollViewDidScroll(scrollView)
     }
+    
 }

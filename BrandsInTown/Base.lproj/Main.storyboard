@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="d8P-zI-eby">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="FY7-ai-xqP">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -33,6 +33,7 @@
                     <connections>
                         <outlet property="searchDisplayController" destination="LOp-ml-IsS" id="4bt-0z-C63"/>
                         <outlet property="spinner" destination="OVv-4G-NA1" id="4u3-G7-97h"/>
+                        <segue destination="d8P-zI-eby" kind="show" identifier="toEventTableViewController" id="KBI-f5-6v7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -66,7 +67,7 @@
         <!--Event Table View Controller-->
         <scene sceneID="bsF-l2-Zc4">
             <objects>
-                <tableViewController id="d8P-zI-eby" customClass="EventTableViewController" customModule="BrandsInTown" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="EventTableViewController" id="d8P-zI-eby" customClass="EventTableViewController" customModule="BrandsInTown" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="6qQ-Y9-ZHW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -82,14 +83,14 @@
                                         <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Ui-he-bct" userLabel="Container View">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="299"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="zuckprofile" translatesAutoresizingMaskIntoConstraints="NO" id="BRZ-Nk-PAU">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="zuckprofile" translatesAutoresizingMaskIntoConstraints="NO" id="BRZ-Nk-PAU">
                                                     <rect key="frame" x="-111.5" y="0.0" width="598" height="299"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="BRZ-Nk-PAU" secondAttribute="height" multiplier="2:1" priority="950" id="M36-5Y-P91"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vUZ-YK-5S6">
-                                                    <rect key="frame" x="8" y="278" width="42" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Here is no upcoming dates" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vUZ-YK-5S6">
+                                                    <rect key="frame" x="8" y="278" width="204.5" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -124,6 +125,9 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="artistDates" destination="vUZ-YK-5S6" id="0DT-NC-K00"/>
+                                    <outlet property="artistImage" destination="BRZ-Nk-PAU" id="DYG-KS-ide"/>
+                                    <outlet property="artistName" destination="S73-ek-Nj0" id="7jJ-nN-W92"/>
                                     <outlet property="bottomConstraint" destination="gbm-IW-IUx" id="oP7-vQ-jjI"/>
                                     <outlet property="containerView" destination="2Ui-he-bct" id="ync-Ul-eUS"/>
                                     <outlet property="topConstraint" destination="lJn-23-bAI" id="ysa-Qi-qMT"/>
@@ -158,7 +162,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lLE-Gp-Vr6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="524" y="850.52473763118451"/>
+            <point key="canvasLocation" x="1478" y="961"/>
         </scene>
     </scenes>
     <resources>
