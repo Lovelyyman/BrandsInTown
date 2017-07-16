@@ -30,7 +30,7 @@ class ArtistTableViewCell: UITableViewCell {
         }
     }
     
-    func configure(withArtist artist: Artist) {
+    func configure(withArtist artist: Artist) {      
         artistName.text = artist.name
         if let upcomingEventCount = artist.upcomingEventCount {
             artistDates.text = ("\(upcomingEventCount)")
