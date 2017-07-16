@@ -8,10 +8,8 @@
 
 import Foundation
 import UIKit
-import Alamofire
 
 class ArtistTableViewCell: UITableViewCell {
-
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var topConstraint: NSLayoutConstraint!
     @IBOutlet weak var containerView: UIView!
@@ -35,11 +33,5 @@ class ArtistTableViewCell: UITableViewCell {
         if let upcomingEventCount = artist.upcomingEventCount {
             artistDates.text = ("\(upcomingEventCount)")
         }
-        guard let imageURL = artist.imageURL else { return }
-        Alamofire.request(URL(string: imageURL)!).responseData { response in
-            guard let data = response.result.value, let image = UIImage(data: data)  else { return }
-            DispatchQueue.main.async { self.artistImage.image = image }
-        }
     }
-    
 }

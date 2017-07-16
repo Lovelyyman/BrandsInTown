@@ -11,4 +11,14 @@ import UIKit
 
 class EventTableViewCell: UITableViewCell {
     
+    @IBOutlet var eventDate: UILabel!
+    @IBOutlet var eventVenueName: UILabel!
+    @IBOutlet var eventPlace: UILabel!
+    
+    func configure(withEvent event: Event) {
+        self.eventDate.text = event.dateTime
+        self.eventVenueName.text = event.venue?.name
+        let place = [event.venue?.city, event.venue?.country].flatMap { $0 }.joined(separator: ", ")
+        self.eventPlace.text = place
+    }
 }
