@@ -23,6 +23,7 @@ class EventTableViewController: UITableViewController {
             tableView.reloadSections(eventsSectionIndex, with: .automatic)
         }
     }
+    var image: UIImage?
     
     func configure(withArtist artist: Artist, dataProvider: DataProvider) {
         self.artist = artist
@@ -35,6 +36,7 @@ class EventTableViewController: UITableViewController {
             DispatchQueue.main.async {
                 let artistCell = self.tableView.cellForRow(at: IndexPath(item: 0, section: 0)) as? ArtistTableViewCell
                 artistCell?.artistImage.image = image
+                self.image = image
             }
         }
     }
@@ -51,6 +53,7 @@ class EventTableViewController: UITableViewController {
         if indexPath.section == Section.artist.rawValue {
             let cell = tableView.dequeueReusableCell(withIdentifier: "ArtistTableViewCell", for: indexPath) as! ArtistTableViewCell
             cell.configure(withArtist: artist)
+            cell.artistImage.image = image
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "EventTableViewCell") as! EventTableViewCell

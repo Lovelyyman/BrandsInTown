@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		220E414C1F1A21DB00A5E315 /* BrandsInTownFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220E414A1F1A21DB00A5E315 /* BrandsInTownFetcher.swift */; };
 		220E414D1F1A21DB00A5E315 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220E414B1F1A21DB00A5E315 /* DataProvider.swift */; };
+		2213ACE61F1BF9CE002B2BCB /* ConnectivityChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2213ACE51F1BF9CE002B2BCB /* ConnectivityChecker.swift */; };
 		22291A911F1A09B900E985C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22291A901F1A09B900E985C2 /* AppDelegate.swift */; };
 		22291A931F1A09B900E985C2 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22291A921F1A09B900E985C2 /* SearchViewController.swift */; };
 		22291A961F1A09B900E985C2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22291A941F1A09B900E985C2 /* Main.storyboard */; };
@@ -27,6 +28,7 @@
 /* Begin PBXFileReference section */
 		220E414A1F1A21DB00A5E315 /* BrandsInTownFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BrandsInTownFetcher.swift; path = Model/BrandsInTownFetcher.swift; sourceTree = "<group>"; };
 		220E414B1F1A21DB00A5E315 /* DataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataProvider.swift; path = Model/DataProvider.swift; sourceTree = "<group>"; };
+		2213ACE51F1BF9CE002B2BCB /* ConnectivityChecker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectivityChecker.swift; sourceTree = "<group>"; };
 		22291A8D1F1A09B900E985C2 /* BrandsInTown.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BrandsInTown.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22291A901F1A09B900E985C2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		22291A921F1A09B900E985C2 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -70,9 +72,26 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		2213ACD71F1BE838002B2BCB /* CoreDataModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = CoreDataModels;
+			sourceTree = "<group>";
+		};
+		2213ACE41F1BF9A9002B2BCB /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				225177C61F1A8E0C006189BC /* EventTableViewController.swift */,
+				22291A921F1A09B900E985C2 /* SearchViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
 		22291A841F1A09B900E985C2 = {
 			isa = PBXGroup;
 			children = (
+				2213ACD71F1BE838002B2BCB /* CoreDataModels */,
 				22291A8F1F1A09B900E985C2 /* BrandsInTown */,
 				22291A8E1F1A09B900E985C2 /* Products */,
 				D0654D115E10C805A5CE6EDD /* Pods */,
@@ -92,15 +111,15 @@
 			isa = PBXGroup;
 			children = (
 				225177E01F1A960E006189BC /* Cells */,
+				2213ACE41F1BF9A9002B2BCB /* ViewControllers */,
 				220E41491F1A216300A5E315 /* Model */,
 				22291A901F1A09B900E985C2 /* AppDelegate.swift */,
-				225177C61F1A8E0C006189BC /* EventTableViewController.swift */,
-				22291A921F1A09B900E985C2 /* SearchViewController.swift */,
 				22291A941F1A09B900E985C2 /* Main.storyboard */,
 				22291A9A1F1A09B900E985C2 /* Assets.xcassets */,
 				22291A9C1F1A09B900E985C2 /* LaunchScreen.storyboard */,
 				22291A9F1F1A09B900E985C2 /* Info.plist */,
 				22291A971F1A09B900E985C2 /* BrandsInTown.xcdatamodeld */,
+				2213ACE51F1BF9CE002B2BCB /* ConnectivityChecker.swift */,
 			);
 			path = BrandsInTown;
 			sourceTree = "<group>";
@@ -263,6 +282,7 @@
 				225177D31F1A945A006189BC /* Event.swift in Sources */,
 				22291A931F1A09B900E985C2 /* SearchViewController.swift in Sources */,
 				22291A991F1A09B900E985C2 /* BrandsInTown.xcdatamodeld in Sources */,
+				2213ACE61F1BF9CE002B2BCB /* ConnectivityChecker.swift in Sources */,
 				220E414D1F1A21DB00A5E315 /* DataProvider.swift in Sources */,
 				220E414C1F1A21DB00A5E315 /* BrandsInTownFetcher.swift in Sources */,
 				22291A911F1A09B900E985C2 /* AppDelegate.swift in Sources */,

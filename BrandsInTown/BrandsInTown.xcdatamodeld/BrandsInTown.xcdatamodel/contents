@@ -1,4 +1,26 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11759" systemVersion="16F73" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="ArtistModel" representedClassName=".ArtistModel" syncable="YES" codeGenerationType="class">
+        <attribute name="image" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <attribute name="upcomingEventCount" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="events" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="EventModel" inverseName="artist" inverseEntity="EventModel" syncable="YES"/>
+    </entity>
+    <entity name="EventModel" representedClassName=".EventModel" syncable="YES" codeGenerationType="class">
+        <attribute name="artistName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="date" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="artist" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ArtistModel" inverseName="events" inverseEntity="ArtistModel" syncable="YES"/>
+        <relationship name="venue" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="VenueModel" inverseName="event" inverseEntity="VenueModel" syncable="YES"/>
+    </entity>
+    <entity name="VenueModel" representedClassName=".VenueModel" syncable="YES" codeGenerationType="class">
+        <attribute name="city" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="country" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="event" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="EventModel" inverseName="venue" inverseEntity="EventModel" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="ArtistModel" positionX="-83" positionY="-54" width="128" height="103"/>
+        <element name="EventModel" positionX="-126" positionY="105" width="128" height="103"/>
+        <element name="VenueModel" positionX="198" positionY="45" width="128" height="105"/>
+    </elements>
 </model>
