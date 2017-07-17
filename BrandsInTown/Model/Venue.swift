@@ -11,18 +11,21 @@ import Gloss
 
 struct Venue: Decodable {
     let name: String?
-    let latitude: Double?
-    let longitude: Double?
     let city: String?
     let region: String?
     let country: String?
     
     init?(json: JSON) {
         name = "name" <~~ json
-        latitude = "latitude" <~~ json
-        longitude = "longitude" <~~ json
         city = "city" <~~ json
         region = "region" <~~ json
         country = "country" <~~ json
+    }
+    
+    init(venueModel: VenueModel) {
+        name = venueModel.name
+        country = venueModel.country
+        city = venueModel.country
+        region = nil
     }
 }

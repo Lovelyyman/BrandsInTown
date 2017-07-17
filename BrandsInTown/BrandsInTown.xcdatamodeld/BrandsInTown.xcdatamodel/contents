@@ -2,7 +2,7 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11759" systemVersion="16F73" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="ArtistModel" representedClassName=".ArtistModel" syncable="YES" codeGenerationType="class">
         <attribute name="image" optional="YES" attributeType="Binary" syncable="YES"/>
-        <attribute name="name" attributeType="String" defaultValueString="bob" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
         <attribute name="upcomingEventCount" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <relationship name="events" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="EventModel" inverseName="artist" inverseEntity="EventModel" syncable="YES"/>
     </entity>
@@ -19,8 +19,8 @@
         <relationship name="event" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="EventModel" inverseName="venue" inverseEntity="EventModel" syncable="YES"/>
     </entity>
     <elements>
-        <element name="ArtistModel" positionX="-47" positionY="-63" width="128" height="105"/>
-        <element name="EventModel" positionX="-126" positionY="105" width="128" height="105"/>
+        <element name="ArtistModel" positionX="-83" positionY="-54" width="128" height="103"/>
+        <element name="EventModel" positionX="-126" positionY="105" width="128" height="103"/>
         <element name="VenueModel" positionX="198" positionY="45" width="128" height="105"/>
     </elements>
 </model>

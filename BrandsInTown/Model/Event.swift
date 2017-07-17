@@ -10,16 +10,20 @@ import Foundation
 import Gloss
 
 struct Event: Decodable {
-    let id: String
-    let artistID: String
     let dateTime: String?
     let venue: Venue?
     
     init?(json: JSON) {
-        guard let id: String = "id" <~~ json, let artistID: String = "artist_id" <~~ json else { return nil }
-        self.id = id
-        self.artistID = artistID
         dateTime = "datetime" <~~ json
         venue = "venue" <~~ json
+    }
+    
+    init?(eventModel: EventModel) {
+        dateTime = eventModel.date
+        if let venueModel = eventModel.venue {
+            venue = Venue(venueModel: venueModel)
+        } else {
+            venue = nil
+        }
     }
 }
