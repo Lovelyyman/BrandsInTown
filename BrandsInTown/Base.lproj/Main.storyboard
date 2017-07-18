@@ -150,7 +150,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BYG-mN-McS">
-                                            <rect key="frame" x="8" y="0.0" width="42" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="42" height="44"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="42" id="xch-1g-9Ct"/>
                                             </constraints>
@@ -165,7 +165,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vhp-Qa-u5T">
-                                            <rect key="frame" x="60" y="0.0" width="42" height="44"/>
+                                            <rect key="frame" x="52" y="0.0" width="42" height="44"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -177,13 +177,15 @@
                                         <constraint firstAttribute="bottom" secondItem="BYG-mN-McS" secondAttribute="bottom" id="MDv-HX-4ca"/>
                                         <constraint firstItem="bl5-2W-G3b" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="vhp-Qa-u5T" secondAttribute="trailing" constant="20" id="bXT-qp-xiR"/>
                                         <constraint firstItem="bl5-2W-G3b" firstAttribute="centerY" secondItem="kBE-Ey-rDG" secondAttribute="centerY" id="doE-3Y-MI3"/>
-                                        <constraint firstAttribute="leadingMargin" secondItem="BYG-mN-McS" secondAttribute="leading" id="mCn-jV-snw"/>
                                         <constraint firstItem="vhp-Qa-u5T" firstAttribute="centerY" secondItem="kBE-Ey-rDG" secondAttribute="centerY" id="r8o-0F-XCN"/>
                                         <constraint firstItem="vhp-Qa-u5T" firstAttribute="height" secondItem="bl5-2W-G3b" secondAttribute="height" id="uNK-pY-9U2"/>
                                         <constraint firstItem="vhp-Qa-u5T" firstAttribute="leading" secondItem="BYG-mN-McS" secondAttribute="trailing" constant="10" id="vQt-8c-FTN"/>
                                         <constraint firstItem="BYG-mN-McS" firstAttribute="top" secondItem="kBE-Ey-rDG" secondAttribute="top" id="z3u-gC-vuL"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <constraints>
+                                    <constraint firstItem="BYG-mN-McS" firstAttribute="leading" secondItem="L6G-ub-lD6" secondAttribute="leading" id="rWl-16-ktM"/>
+                                </constraints>
                                 <connections>
                                     <outlet property="eventDate" destination="BYG-mN-McS" id="hbP-pg-jHY"/>
                                     <outlet property="eventPlace" destination="bl5-2W-G3b" id="L7M-pJ-luG"/>
