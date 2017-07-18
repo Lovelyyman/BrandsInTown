@@ -101,7 +101,9 @@
                                                         <constraint firstAttribute="width" constant="30" id="9L8-g7-Aps"/>
                                                         <constraint firstAttribute="height" constant="30" id="kxd-J2-blh"/>
                                                     </constraints>
-                                                    <state key="normal" title="Button" image="playstation-cross-black-and-white-icon"/>
+                                                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <size key="titleShadowOffset" width="0.5" height="0.5"/>
+                                                    <state key="normal" title="Button" image="if_icon-close-circled_211650"/>
                                                     <connections>
                                                         <action selector="closeViewController" destination="d8P-zI-eby" eventType="touchUpInside" id="GxR-We-mpm"/>
                                                     </connections>
@@ -193,7 +195,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="playstation-cross-black-and-white-icon" width="256" height="256"/>
+        <image name="if_icon-close-circled_211650" width="64" height="64"/>
         <image name="zuckprofile" width="100" height="100"/>
     </resources>
 </document>
