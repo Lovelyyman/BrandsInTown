@@ -15,7 +15,10 @@ enum Section: Int {
 }
 
 class EventTableViewController: UITableViewController {
-    let numberOfSections = 2
+    private let numberOfSections = 2
+    private let eventCellHeight: CGFloat = 60
+    private let artistCellCount = 1
+    
     var artist: Artist!
     var events: [Event] = [Event]() {
         didSet {
@@ -46,7 +49,7 @@ class EventTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return section == Section.artist.rawValue ? 1 : events.count
+        return section == Section.artist.rawValue ? artistCellCount : events.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -63,11 +66,11 @@ class EventTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat{
-        return indexPath.section == Section.artist.rawValue ? UITableViewAutomaticDimension : 50
+        return indexPath.section == Section.artist.rawValue ? UITableViewAutomaticDimension : eventCellHeight
     }
     
     override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return indexPath.section == Section.artist.rawValue ? 250 : 50
+        return indexPath.section == Section.artist.rawValue ? 250 : eventCellHeight
     }
     
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {
