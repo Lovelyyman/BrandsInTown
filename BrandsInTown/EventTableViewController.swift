@@ -18,15 +18,21 @@ class EventTableViewController: UITableViewController {
     private let numberOfSections = 2
     private let eventCellHeight: CGFloat = 60
     private let artistCellCount = 1
-    
     var artist: Artist!
+    var image: UIImage?
     var events: [Event] = [Event]() {
         didSet {
             let eventsSectionIndex = IndexSet(integer: Section.events.rawValue)
             tableView.reloadSections(eventsSectionIndex, with: .automatic)
         }
     }
-    var image: UIImage?
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
+    @IBAction func closeViewController() {
+        dismiss(animated: true)
+    }
     
     func configure(withArtist artist: Artist, dataProvider: DataProvider) {
         self.artist = artist

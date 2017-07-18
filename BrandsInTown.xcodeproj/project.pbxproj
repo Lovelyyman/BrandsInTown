@@ -76,13 +76,6 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
-		2213ACD71F1BE838002B2BCB /* CoreDataModels */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = CoreDataModels;
-			sourceTree = "<group>";
-		};
 		2213ACE41F1BF9A9002B2BCB /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -95,7 +88,6 @@
 		22291A841F1A09B900E985C2 = {
 			isa = PBXGroup;
 			children = (
-				2213ACD71F1BE838002B2BCB /* CoreDataModels */,
 				22291A8F1F1A09B900E985C2 /* BrandsInTown */,
 				22291A8E1F1A09B900E985C2 /* Products */,
 				D0654D115E10C805A5CE6EDD /* Pods */,

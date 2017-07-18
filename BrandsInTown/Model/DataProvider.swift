@@ -94,6 +94,7 @@ class DataProvider {
         }
     }
     
+    //MARK: All logic with database should go to separate class
     private func replaceEvents(of artist: Artist, with events: [Event]) {
         let artistModel = getArtistModelFromLocalStore(artistName: artist.name)
         clearEvents(of: artist)
@@ -122,19 +123,11 @@ class DataProvider {
         let fetchRequest: NSFetchRequest<EventModel> = EventModel.fetchRequest()
         fetchRequest.predicate = predicate
         
-        do {
-            let fetchedEntities = try managedContext.fetch(fetchRequest)
-            
+        if let fetchedEntities = try? managedContext.fetch(fetchRequest) {
             for entity in fetchedEntities {
                 managedContext.delete(entity)
             }
-        } catch {
-            
-        }
-        
-        do {
-            try managedContext.save()
-        } catch {
+            try? managedContext.save()
         }
     }
     
@@ -152,8 +145,6 @@ class DataProvider {
         guard let models = try? managedContext.fetch(fetchRequest), let artistModel = models.first  else { return nil }
         return artistModel
     }
-    
-    
     
     private func getImageFromLocalStore(for artist: Artist) -> UIImage? {
         let artistModel = getArtistModelFromLocalStore(artistName: artist.name)

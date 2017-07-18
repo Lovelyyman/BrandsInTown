@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="FY7-ai-xqP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -27,11 +27,17 @@
                                 <rect key="frame" x="177" y="323" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>
+                            <searchBar contentMode="redraw" fixedFrame="YES" placeholder="Search for artists" translatesAutoresizingMaskIntoConstraints="NO" id="bnH-vM-ue5">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="PKw-YB-Spo"/>
                     <connections>
+                        <outlet property="searchBar" destination="bnH-vM-ue5" id="XBU-7c-X7c"/>
                         <outlet property="searchDisplayController" destination="LOp-ml-IsS" id="4bt-0z-C63"/>
                         <outlet property="spinner" destination="OVv-4G-NA1" id="4u3-G7-97h"/>
                     </connections>
@@ -47,22 +53,6 @@
                 </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="1478" y="97"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="to7-rf-yVR">
-            <objects>
-                <navigationController id="FY7-ai-xqP" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="aor-fb-vdn">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="iWG-yF-hNA"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="YxB-iK-EHc" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="524" y="97"/>
         </scene>
         <!--Event Table View Controller-->
         <scene sceneID="bsF-l2-Zc4">
@@ -105,6 +95,17 @@
                                                     <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <size key="shadowOffset" width="0.5" height="0.5"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bSt-rb-vHD">
+                                                    <rect key="frame" x="337" y="8" width="30" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="30" id="9L8-g7-Aps"/>
+                                                        <constraint firstAttribute="height" constant="30" id="kxd-J2-blh"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Button" image="playstation-cross-black-and-white-icon"/>
+                                                    <connections>
+                                                        <action selector="closeViewController" destination="d8P-zI-eby" eventType="touchUpInside" id="GxR-We-mpm"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
@@ -122,6 +123,8 @@
                                         </view>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstAttribute="topMargin" secondItem="bSt-rb-vHD" secondAttribute="top" id="RFE-Gc-3n6"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="bSt-rb-vHD" secondAttribute="trailing" id="YHR-hh-7EJ"/>
                                         <constraint firstItem="2Ui-he-bct" firstAttribute="top" secondItem="6up-02-Yks" secondAttribute="top" id="Zn5-oA-J6D"/>
                                         <constraint firstAttribute="trailing" secondItem="2Ui-he-bct" secondAttribute="trailing" id="c1h-5w-GEj"/>
                                         <constraint firstAttribute="bottom" secondItem="2Ui-he-bct" secondAttribute="bottom" id="f75-3z-M39"/>
@@ -190,6 +193,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="playstation-cross-black-and-white-icon" width="256" height="256"/>
         <image name="zuckprofile" width="100" height="100"/>
     </resources>
 </document>

@@ -32,19 +32,12 @@ enum Storyboard: String {
 class SearchViewController: UIViewController {
 
     @IBOutlet var spinner: UIActivityIndicatorView!
-    
+    @IBOutlet var searchBar: UISearchBar!
     let dataProvider = DataProvider()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        createSearchBar()
-    }
-    
-    private func createSearchBar() {
-        let searchBar = UISearchBar()
         searchBar.delegate = self
-        searchBar.placeholder = "Search for artists"
-        navigationItem.titleView = searchBar
     }
 }
 
@@ -60,9 +53,9 @@ extension SearchViewController: UISearchBarDelegate {
             DispatchQueue.main.async {
                 self.spinner.stopAnimating()
                 guard let artist = artist else { return }
-                let controller = Storyboard.main.instance.instantiateViewController(withIdentifier: "EventTableViewController") as! EventTableViewController
+                guard let controller = Storyboard.main.instanceOf(viewController: EventTableViewController.self, identifier: "EventTableViewController") else { return }
                 controller.configure(withArtist: artist, dataProvider: self.dataProvider)
-                self.navigationController?.pushViewController(controller, animated: true)
+                self.present(controller, animated: true)
             }
         }
     }
