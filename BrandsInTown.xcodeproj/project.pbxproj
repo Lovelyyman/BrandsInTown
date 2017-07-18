@@ -22,6 +22,8 @@
 		225177D41F1A945A006189BC /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225177D11F1A945A006189BC /* Venue.swift */; };
 		225177E31F1A960E006189BC /* ArtistTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225177E11F1A960E006189BC /* ArtistTableViewCell.swift */; };
 		225177E41F1A960E006189BC /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225177E21F1A960E006189BC /* EventTableViewCell.swift */; };
+		22800FB91F1E8E1700F97CCF /* DecomposedDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22800FB81F1E8E1700F97CCF /* DecomposedDate.swift */; };
+		22800FBB1F1E8E2A00F97CCF /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22800FBA1F1E8E2A00F97CCF /* Fonts.swift */; };
 		30ED3CEF216A3425EFE1C020 /* Pods_BrandsInTown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF4B26DDCDF821864E3B96FA /* Pods_BrandsInTown.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +45,8 @@
 		225177D11F1A945A006189BC /* Venue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Venue.swift; path = Model/Venue.swift; sourceTree = "<group>"; };
 		225177E11F1A960E006189BC /* ArtistTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistTableViewCell.swift; sourceTree = "<group>"; };
 		225177E21F1A960E006189BC /* EventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
+		22800FB81F1E8E1700F97CCF /* DecomposedDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecomposedDate.swift; sourceTree = "<group>"; };
+		22800FBA1F1E8E2A00F97CCF /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		63553B92A742112D75D794A0 /* Pods-BrandsInTown.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BrandsInTown.release.xcconfig"; path = "Pods/Target Support Files/Pods-BrandsInTown/Pods-BrandsInTown.release.xcconfig"; sourceTree = "<group>"; };
 		7CCC62BA0A5771F64247B44A /* Pods-BrandsInTown.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BrandsInTown.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BrandsInTown/Pods-BrandsInTown.debug.xcconfig"; sourceTree = "<group>"; };
 		FF4B26DDCDF821864E3B96FA /* Pods_BrandsInTown.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BrandsInTown.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -110,6 +114,7 @@
 		22291A8F1F1A09B900E985C2 /* BrandsInTown */ = {
 			isa = PBXGroup;
 			children = (
+				22800FB71F1E8DD500F97CCF /* Helpers */,
 				225177E01F1A960E006189BC /* Cells */,
 				2213ACE41F1BF9A9002B2BCB /* ViewControllers */,
 				220E41491F1A216300A5E315 /* Model */,
@@ -131,6 +136,15 @@
 				225177E21F1A960E006189BC /* EventTableViewCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		22800FB71F1E8DD500F97CCF /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				22800FB81F1E8E1700F97CCF /* DecomposedDate.swift */,
+				22800FBA1F1E8E2A00F97CCF /* Fonts.swift */,
+			);
+			name = Helpers;
 			sourceTree = "<group>";
 		};
 		283CEA829EDB6DD141D992E1 /* Frameworks */ = {
@@ -274,6 +288,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22800FBB1F1E8E2A00F97CCF /* Fonts.swift in Sources */,
 				225177C71F1A8E0C006189BC /* EventTableViewController.swift in Sources */,
 				225177E41F1A960E006189BC /* EventTableViewCell.swift in Sources */,
 				225177D21F1A945A006189BC /* Artist.swift in Sources */,
@@ -282,6 +297,7 @@
 				225177D31F1A945A006189BC /* Event.swift in Sources */,
 				22291A931F1A09B900E985C2 /* SearchViewController.swift in Sources */,
 				22291A991F1A09B900E985C2 /* BrandsInTown.xcdatamodeld in Sources */,
+				22800FB91F1E8E1700F97CCF /* DecomposedDate.swift in Sources */,
 				2213ACE61F1BF9CE002B2BCB /* ConnectivityChecker.swift in Sources */,
 				220E414D1F1A21DB00A5E315 /* DataProvider.swift in Sources */,
 				220E414C1F1A21DB00A5E315 /* BrandsInTownFetcher.swift in Sources */,
