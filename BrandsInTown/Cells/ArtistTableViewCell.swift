@@ -30,6 +30,6 @@ class ArtistTableViewCell: UITableViewCell {
     
     func configure(withArtist artist: Artist) {      
         artistName.text = artist.name
-        artistDates.text = ("\(artist.upcomingEventCount)")
+        artistDates.text = ("\(artist.upcomingEventCount) Upcoming Dates")
     }
 }
