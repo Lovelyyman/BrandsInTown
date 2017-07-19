@@ -17,8 +17,9 @@ enum Section: Int {
 class EventTableViewController: UITableViewController {
     private let numberOfSections = 2
     private let eventCellHeight: CGFloat = 60
+    private let artistCellHeight: CGFloat = 250
     private let artistCellCount = 1
-    var artist: Artist!
+    var artist: Artist?
     var image: UIImage?
     var events: [Event] = [Event]() {
         didSet {
@@ -43,7 +44,7 @@ class EventTableViewController: UITableViewController {
         
         dataProvider.getImage(for: artist) { image in
             DispatchQueue.main.async {
-                let artistCell = self.tableView.cellForRow(at: IndexPath(item: 0, section: 0)) as? ArtistTableViewCell
+                let artistCell = self.tableView.cellForRow(at: IndexPath(item: 0, section: Section.artist.rawValue)) as? ArtistTableViewCell
                 artistCell?.artistImage.image = image
                 self.image = image
             }
@@ -59,7 +60,7 @@ class EventTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.section == Section.artist.rawValue {
+        if indexPath.section == Section.artist.rawValue, let artist = artist {
             let cell = tableView.dequeueReusableCell(withIdentifier: "ArtistTableViewCell", for: indexPath) as! ArtistTableViewCell
             cell.configure(withArtist: artist)
             cell.artistImage.image = image
@@ -76,11 +77,11 @@ class EventTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return indexPath.section == Section.artist.rawValue ? 250 : eventCellHeight
+        return indexPath.section == Section.artist.rawValue ? artistCellHeight : eventCellHeight
     }
     
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let firstCell = tableView.cellForRow(at: IndexPath(item: 0, section: 0))
+        let firstCell = tableView.cellForRow(at: IndexPath(item: 0, section: Section.artist.rawValue))
         guard let artistCell = firstCell as? ArtistTableViewCell else { return }
         artistCell.scrollViewDidScroll(scrollView)
     }
