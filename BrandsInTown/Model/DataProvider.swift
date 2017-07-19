@@ -111,9 +111,12 @@ class DataProvider {
     
     private func eventsFromLocalStore(for artist: Artist) -> [Event]? {
         let artistModel = getArtistModelFromLocalStore(artistName: artist.name)
-        return artistModel?.events?.allObjects.lazy.flatMap { event in
+        let events: [Event]? = artistModel?.events?.allObjects.lazy.flatMap { event in
             let eventModel = event as! EventModel
             return Event(eventModel: eventModel)
+        }
+        return events?.sorted { lhs, rhs in
+            return lhs.dateTime?.localizedStandardCompare(rhs.dateTime ?? "") == .orderedAscending
         }
     }
     

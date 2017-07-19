@@ -11,19 +11,13 @@ import Gloss
 
 struct Artist: Decodable {
     let name: String
-//    let url: String?
     let imageURL: String?
-//    let thumbURL: String?
-//    let facebookPageURL: String?
     let upcomingEventCount: Int
     
     init?(json: JSON) {
         guard let name: String = "name" <~~ json else { return nil }
         self.name = name
-//        url = "url" <~~ json
         imageURL = "image_url" <~~ json
-//        thumbURL = "thumb_url" <~~ json
-//        facebookPageURL = "facebook_page_url" <~~ json
         upcomingEventCount = ("upcoming_event_count" <~~ json) ?? 0
     }
     

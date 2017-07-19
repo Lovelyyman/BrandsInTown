@@ -17,6 +17,7 @@ enum Section: Int {
 class EventTableViewController: UITableViewController {
     private let numberOfSections = 2
     private let eventCellHeight: CGFloat = 60
+    private let artistCellHeight: CGFloat = 250
     private let artistCellCount = 1
     var artist: Artist!
     var image: UIImage?
@@ -76,7 +77,7 @@ class EventTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return indexPath.section == Section.artist.rawValue ? 250 : eventCellHeight
+        return indexPath.section == Section.artist.rawValue ? artistCellHeight : eventCellHeight
     }
     
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {
